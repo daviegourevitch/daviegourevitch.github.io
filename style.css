@@ -1,9 +1,11 @@
 body {
   background-color: #000000;
   font-family: Arial;
-  font-color: #ffffff;
+  color: #ffffff;
+  text-align: center;
 }
 #contents {
   max-width: 500px;
   margin: auto;
+  display: inline-block;
 }
