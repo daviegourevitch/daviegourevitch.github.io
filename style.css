@@ -3,7 +3,7 @@ body {
   font-family: Arial;
   font-color: #ffffff;
 }
-.contents {
+#contents {
   max-width: 500px;
   margin: auto;
 }
