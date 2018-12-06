@@ -9,6 +9,9 @@ body {
   margin: auto;
   display: inline-block;
 }
+.timer {
+  font-size: 3em;
+}
 .beready {
   font-size: 3em;
 }
