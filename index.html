@@ -27,12 +27,12 @@
   
   <script>
   // Set the date we're counting down to
-  Date countDownDate = new Date("Feb 23, 2019 14:00:00");
+  var countDownDate = new Date("Feb 23, 2019 14:00:00");
   updateTime();
   var x = setInterval(updateTime, 1000);
   
   function updateTime() {
-    Date now = new Date();
+    var now = new Date();
     var distance = countDownDate.getTime() - now;
     var endDate = new Date(countDownDate.getTime() + eventDuration*60*60*1000);
       
