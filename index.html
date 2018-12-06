@@ -28,7 +28,10 @@
   <script>
   // Set the date we're counting down to
   Date countDownDate = new Date("Feb 23, 2019 14:00:00");
-  var x = setInterval(function() {
+  updateTime();
+  var x = setInterval(updateTime, 1000);
+  
+  function updateTime() {
     Date now = new Date();
     var distance = countDownDate.getTime() - now;
     Date endDate = new Date(countDownDate.getTime() + 5 * HOUR);
@@ -52,7 +55,7 @@
         document.getElementById("timer").innerHTML = "PRAWN IS OVER";
         document.getElementById("emailentry").clear;
     }
-  }, 1000);
+  }
   </script>
   
 </body>
