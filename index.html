@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prawn V1.0.0</title>
+    <title>Prawn V2.0.0</title>
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="MLW8-RU2pciY9SbZa1ZQmwg00IZ353F5zYmqQ7iFD78" />
     <audio>
@@ -15,7 +15,7 @@
   <span class="contents">
     <img id="image" alt="Prawn" src="/60e73c0df310b0b2a4f18cd9e426bd88.png" id="center">
     
-    <p id="timer"></p>
+    <div id="timer"> </div>
     
     <p id="beready"> Be ready, Carleton. </p>
     
@@ -27,11 +27,11 @@
   
   <script>
   // Set the date we're counting down to
-  Date countDownDate = new Date("Feb 23, 2019 14:00:00");
+  var countDownDate = new Date("Feb 23, 2019 14:00:00");
   var x = setInterval(function() {
-    Date now = new Date();
+    var now = new Date();
     var distance = countDownDate.getTime() - now;
-    Date endDate = new Date(countDownDate.getTime() + 5 * HOUR);
+    var endDate = new Date(countDownDate.getTime() + 5 * HOUR);
       
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
