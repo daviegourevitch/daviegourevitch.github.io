@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prawn V2.0.4</title>
+    <title>Prawn 2019 V2.0.5</title>
     <link rel="stylesheet" href="style.css">
+	<link rel='icon' href='favicon.ico' type='image/x-icon'/ >
     <meta name="google-site-verification" content="MLW8-RU2pciY9SbZa1ZQmwg00IZ353F5zYmqQ7iFD78" />
     <audio>
-      <source src="/04 Flamingo.mp3" type="audio/mpeg">
+      <source src="Flamingo.mp3" type="audio/mpeg">
     </audio>
 </head>
     
 <body>
   <span class="contents">
-    <img id="image" alt="Prawn" src="60e73c0df310b0b2a4f18cd9e426bd88.png" id="center">
+    <img id="image" alt="Prawn" src="prawn.png" id="center">
     
     <div id="timer"> </div>
     
     <p id="beready"> Be ready, Carleton. </p>
   </span>
   
-  <script src="script.js"></script>
+  <script>
+	var countDownDate = new Date("Aug 31, 2019 14:00:00");
+	var endTime = new Date("Aug 31, 2019 16:00:00");
+	updateTime();
+	var x = setInterval(updateTime, 1000);
+
+	function updateTime() {
+		var now = new Date();
+		var distance = countDownDate - now;
+		  
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Output the result in an element with id="demo"
+		document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+
+		// If the count down is over, write some text 
+		if ((distance < 0) && (now > endTime)) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "PRAWN IS HAPPENING";
+		} else if (now > endTime) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "PRAWN IS OVER";
+			document.getElementById("emailentry").clear;
+		}
+	}
+  </script>
   
 </body>
 </html>
