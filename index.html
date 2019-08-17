@@ -8,55 +8,17 @@
       <source src="/04 Flamingo.mp3" type="audio/mpeg">
     </audio>
 </head>
-
-    
     
 <body>
   <span class="contents">
-    <img id="image" alt="Prawn" src="/60e73c0df310b0b2a4f18cd9e426bd88.png" id="center">
+    <img id="image" alt="Prawn" src="60e73c0df310b0b2a4f18cd9e426bd88.png" id="center">
     
     <div id="timer"> </div>
     
     <p id="beready"> Be ready, Carleton. </p>
-    
-    <span id="emailentry"
-        <label for="email">Enter your email to stay updated:</label>
-        <input type="email" id="emailinput" size="30" required>
-    </span>
   </span>
   
-  <script>
-  // Set the date we're counting down to
-  var countDownDate = new Date("Feb 23, 2019 14:00:00");
-  updateTime();
-  var x = setInterval(updateTime, 1000);
-  
-  function updateTime() {
-    var now = new Date();
-    var distance = countDownDate.getTime() - now;
-    var endDate = new Date(countDownDate.getTime() + eventDuration*60*60*1000);
-      
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Output the result in an element with id="demo"
-    document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
-    // If the count down is over, write some text 
-    if ((distance < 0) && (countDownDate.getTime < endDate.getTime())) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "PRAWN IS HAPPENING";
-    } else if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "PRAWN IS OVER";
-        document.getElementById("emailentry").clear;
-    }
-  }
-  </script>
+  <script src="script.js"></script>
   
 </body>
 </html>
