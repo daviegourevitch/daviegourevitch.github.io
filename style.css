@@ -113,9 +113,14 @@ body {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 60%;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	
+	background-image: url("./shrimp.png");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 60%;
 }
 
 

@@ -32,7 +32,7 @@
   </div>
   
   <div id="contents">
-    <img id="shrimp" alt="Shrimp" src="shrimp.png">
+    <span id="shrimp" alt="Prawns"></span>
     
     <div class="text" id="timer"></div>
     
@@ -62,12 +62,12 @@
 		+ minutes + "m " + seconds + "s ";
 
 		// If the count down is over, write some text 
-		if ((distance < 0) && (now > endTime)) {
+		if ((distance < 0) && (now < endTime)) {
 			clearInterval(x);
 			document.getElementById("timer").innerHTML = "PRAWN IS HAPPENING";
 		} else if (now > endTime) {
 			clearInterval(x);
-			document.getElementById("timer").innerHTML = "PRAWN IS OVER";
+			document.getElementById("timer").innerHTML = "PRAWN IS OVER... :(";
 			document.getElementById("emailentry").clear;
 		}
 	}
