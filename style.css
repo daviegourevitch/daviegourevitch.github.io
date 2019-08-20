@@ -18,7 +18,7 @@ body {
 
 /* Table of Contents*/
 #toc {
-	background-color: grey;
+	background-color: #F2F2F2;
 	line-height: 1;
 	top: 0;
 	z-index: 2;
@@ -36,9 +36,14 @@ body {
     padding-right: 15px;
 	display: inline-block;
 }
+#logo-div {
+	max-width: 5%;
+	max-height: 5%;
+	display: inherit;
+}
 #header-logo {
-	width: 6%;
-	height: 6%;
+	max-width: 100%;
+	max-height: 100%;
 	min-height: 50px;
 	min-width: 50px;
 	border: 0;
@@ -60,13 +65,23 @@ body {
 #toc-links a {
     padding: 15px 30px 15px 0;
     position: relative;
-    color: #83d0f2;
+    color: #031740;
     display: inline-block;
     font-size: 18px;
     font-size: 1rem;
     letter-spacing: .02em;
     white-space: nowrap;
     text-decoration: none;
+	float: left;
+}
+#toc-links a:hover {
+    color: #0F8DBF;
+}
+#song-div {
+	float: right;
+	display: inherit;
+}
+#song-audio {
 }
 
 /* Contents */
