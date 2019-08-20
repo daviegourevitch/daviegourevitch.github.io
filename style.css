@@ -11,8 +11,6 @@
 
 html {
 	height: 100%;
-	width: 100%;
-	
 }
 
 body {
@@ -23,8 +21,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
-  position: fixed;
-  
+  width: 100%;
   margin: 0;
 }
 
@@ -45,16 +42,19 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 	padding-top: 5px;
-	display: inline-block;
+	overflow: auto;
 }
 #logo-div {
-	width: 5%;
+	width: 80px;
 	height: 5%;
-	display: inherit;
+	display: inline-block;
 }
 #header-logo {
 	width: 100%;
 	height: 100%;
+}
+#header-logo:hover {
+	src=
 }
 #toc-links {
 	display: inline;
