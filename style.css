@@ -1,20 +1,22 @@
+/* Global */
+html {
+	min-height: 100%;
+}
 
 body {
   font-family: Arial;
 
-  /* Full height */
   height: 100%;
 
-  /* Center and scale the image nicely */
   background-image: url("./underwater.jpg"),
     linear-gradient(rgb(15, 129, 192), rgba(0, 9, 40));
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 100%;
   margin: 0;
 }
 
+/* Table of Contents*/
 #toc {
 	background-color: grey;
 	line-height: 1;
@@ -24,7 +26,7 @@ body {
 	margin: 0;
     padding: 0;
     border: 0;
-	max-height: 5%
+	max-height: 5%;
 }
 #toc-contents {
 	margin: 0 auto;
@@ -32,10 +34,15 @@ body {
     max-width: 87.4375em;
     padding-left: 15px;
     padding-right: 15px;
+	display: inline-block;
 }
-#header-logo img {
-	width: 5%;
-	height: 5%;
+#header-logo {
+	width: 6%;
+	height: 6%;
+	min-height: 50px;
+	min-width: 50px;
+	border: 0;
+	padding: 0;
 }
 #toc-links {
 	display: inline;
@@ -62,6 +69,16 @@ body {
     text-decoration: none;
 }
 
+/* Contents */
+#shrimp {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: 50% 50%;
+	max-width: 50%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
 
 
 .timer {
@@ -74,14 +91,5 @@ body {
 	display: none;
 }
 
-#shrimp {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	position: 50% 50%;
-	size: 35% 35%;
-}
+
 
