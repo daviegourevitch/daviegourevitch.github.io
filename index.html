@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Prawn 2019 V2.0.5</title>
     <link rel="stylesheet" href="style.css">
 	<link rel='icon' href='favicon.ico' type='image/x-icon'/ >
     <meta name="google-site-verification" content="MLW8-RU2pciY9SbZa1ZQmwg00IZ353F5zYmqQ7iFD78" />
-    <audio controls id="audio">
+	<audio controls id="audio">
       <source src="Flamingo.mp3" type="audio/mpeg">
 	  Your browser does not support the audio tag... :(
 	  Please hum Kero Kero Bonito's Flamingo to yourself.
-    </audio>
+	</audio>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous">
+	</script>
 </head>
+
+<div id="toc">
+	<div id="toc-contents">
+		<div id="header-logo"> <img src="header-logo.png"> </div>
+		<ol id="toc-links">
+			<li><a href="http://prawn.wtf/info">More info</a></li>
+			<li><a href="http://prawn.wtf/tickets">Buy tickets</a></li>
+			<li><a href="https://www.facebook.com/CUSCGaming/">CUSC on Facebook</a></li>
+		</ol>
+	</div>
+	
+</div>
     
 <body>
-  <div class="contents">
-    <img id="image" alt="Prawn" src="prawn.png" id="center">
+  <div id="contents">
     
-    <div id="timer"> </div>
+    <div id="timer"></div>
     
-    <p id="beready"> Be ready, Carleton. </p>
+    <p id="beready">Be ready, Carleton.</p>
   </div>
-  
-  <script>
+</body>
+
+<script>
 	var countDownDate = new Date("Aug 31, 2019 14:00:00");
 	var endTime = new Date("Aug 31, 2019 16:00:00");
 	updateTime();
@@ -53,5 +71,5 @@
 		}
 	}
   </script>
-</body>
+
 </html>
