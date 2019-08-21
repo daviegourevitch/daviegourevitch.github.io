@@ -137,6 +137,9 @@ body {
 	background-color: #031740;
 	opacity: 0.9;
 }
+#paypal-link {
+	width: 10%;
+}
 #text-contents {
 	padding: 2%;
 	color: #F2F2F2;
