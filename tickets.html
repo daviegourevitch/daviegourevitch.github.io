@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Prawn 2019 V2.0.5</title>
+    <title>Prawn 2019</title>
     <link rel="stylesheet" href="style.css">
 	<link rel='icon' href='favicon.ico' type='image/x-icon'/ >
     <meta name="google-site-verification" content="MLW8-RU2pciY9SbZa1ZQmwg00IZ353F5zYmqQ7iFD78" />
@@ -16,12 +16,16 @@
     
 <body>
   <div id="toc">
+  
     <div id="toc-contents">
-	  <div id="logo-div"><a href="http://prawn.wtf"><img id="header-logo" src="header-logo.png"></a></div>
+	  <div id="logo-div"><a href="http://prawn.wtf"><img id="header-logo" src="header-logo.png" onmouseover="this.src='header-logo2.png'" onmouseout="this.src='header-logo.png'"></a></div>
+	  <div id="external-links"> 
+		<div id="discord-logo"><a target="_blank" href="https://discord.gg/MWk2sxA"><img class="external-logo" src="discord_logo_black.png" onmouseover="this.src='discord_logo_colour.png'" onmouseout="this.src='discord_logo_black.png'"></a></div>
+		<div id="facebook-logo"><a target="_blank" href="https://www.facebook.com/CUSCGaming/"><img class="external-logo" src="f_logo_black.png" onmouseover="this.src='f_logo_colour.png'" onmouseout="this.src='f_logo_black.png'"></a></div>
+	  </div>
 	  <ol id="toc-links">
 		  <li><a href="http://prawn.wtf/info">More info</a></li>
 		  <li><a href="http://prawn.wtf/tickets">Buy tickets</a></li>
-		  <li><a href="https://www.facebook.com/CUSCGaming/">CUSC on Facebook</a></li>
       </ol>
 	  <div id="song-div"> <audio controls id="song-audio" src="Flamingo.mp3" type="audio/mpeg">
 		  Your browser does not support the audio tag... :(
@@ -29,14 +33,46 @@
 	      </audio></div>
     </div>
   </div>
+  
   <div id="contents">
-    <img id="shrimp" alt="Shrimp" src="shrimp.png" id="center">
+    <span id="shrimp" alt="Prawns"></span>
     
-    <div id="timer"></div>
+    <div class="text" id="timer"></div>
     
-    <p id="beready">Tickets</p>
+    <p class="text" id="beready">Be ready, Carleton.</p>
   </div>
 </body>
 
+<script>
+	var countDownDate = new Date("Aug 31, 2019 14:00:00");
+	var endTime = new Date("Aug 31, 2019 16:00:00");
+	updateTime();
+	var x = setInterval(updateTime, 1000);
+
+	function updateTime() {
+		var now = new Date();
+		var distance = countDownDate - now;
+		  
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Output the result in an element with id="demo"
+		document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+
+		// If the count down is over, write some text 
+		if ((distance < 0) && (now < endTime)) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "PRAWN IS HAPPENING";
+		} else if (now > endTime) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "PRAWN IS OVER... :(";
+			document.getElementById("emailentry").clear;
+		}
+	}
+  </script>
 
 </html>
