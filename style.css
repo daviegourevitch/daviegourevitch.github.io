@@ -107,8 +107,8 @@ body {
 #contents {
 	text-align: center;
 	height: inherit;
-	width: inherit
-	
+	width: inherit;
+	padding: 5px;
 }
 .text {
 	font-size: 3rem;
@@ -129,6 +129,21 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	height: 60%;
+}
+#text-contents-container {
+	margin-left: 15%;
+	margin-right: 15%;
+	text-align: left;
+	background-color: #031740;
+	opacity: 0.9;
+}
+#text-contents {
+	padding: 2%;
+	color: #F2F2F2;
+	font-family: Arial;
+	margin-left: 5%;
+	margin-right: 5%;
+	opacity: 1;
 }
 
 
