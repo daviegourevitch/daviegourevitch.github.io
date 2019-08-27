@@ -30,8 +30,10 @@
     </div>
   </div>
   
-  <div id="contents">
-    <span id="shrimp" alt="Prawns"></span>
+  <div id="contents"> 
+	<span id="happening">
+		<span id="shrimp" alt="Prawns"></span>
+	</span>
     
     <div class="text" id="timer"></div>
     
@@ -63,6 +65,8 @@
 		if ((distance < 0) && (now < endTime)) {
 			clearInterval(x);
 			document.getElementById("timer").innerHTML = "PRAWN IS HAPPENING";
+			document.getElementById("happening").innerHTML = "<img src='happening.gif' alt='HAPPENING'>";
+			document.getElementById("beready").innerHTML = "";
 		} else if (now > endTime) {
 			clearInterval(x);
 			document.getElementById("timer").innerHTML = "PRAWN IS OVER... :(";
