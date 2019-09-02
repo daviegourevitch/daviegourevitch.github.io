@@ -20,7 +20,8 @@
 	  </div>
 	  <ol id="toc-links">
 		  <li><a href="http://prawn.wtf/info">More info</a></li>
-		  <li><a href="http://prawn.wtf/tickets">Buy tickets</a></li>
+		  <!--<li><a href="http://prawn.wtf/tickets">Buy tickets</a></li>-->
+		  <li><a href="http://prawn.wtf/tickets">Past events</a></li>
       </ol>
 	  <div id="song-div"> <audio controls id="song-audio" src="Flamingo.mp3" type="audio/mpeg">
 		  Your browser does not support the audio tag... :(
@@ -73,10 +74,11 @@
 		if ((distance < 0) && (now < endTime)) {
 			clearInterval(x);
 			document.getElementById("timer").innerHTML = "PRAWN IS HAPPENING";
+			document.getElementById("beready").innerHTML = "";
 		} else if (now > endTime) {
 			clearInterval(x);
 			document.getElementById("timer").innerHTML = "PRAWN IS OVER... :(";
-			document.getElementById("emailentry").clear;
+			document.getElementById("beready").innerHTML = "";
 		}
 	}
   </script>
