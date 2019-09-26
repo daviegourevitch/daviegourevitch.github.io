@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 	<link rel='icon' href='favicon.ico' type='image/x-icon'/ >
     <meta name="google-site-verification" content="MLW8-RU2pciY9SbZa1ZQmwg00IZ353F5zYmqQ7iFD78" />
+	<meta name="description" content="Prawn 2019 by the Carleton University Strategy Club, a live action shrimp/fish themed rpg in a pool!">
 </head>
     
 <body>
@@ -19,9 +20,8 @@
 		<div id="facebook-logo"><a target="_blank" href="https://www.facebook.com/CUSCGaming/"><img class="external-logo" src="f_logo_black.png" onmouseover="this.src='f_logo_colour.png'" onmouseout="this.src='f_logo_black.png'"></a></div>
 	  </div>
 	  <ol id="toc-links">
-		  <li><a href="http://prawn.wtf/info">More info</a></li>
-		  <!--<li><a href="http://prawn.wtf/tickets">Buy tickets</a></li>-->
-		  <li><a href="http://prawn.wtf/tickets">Past events</a></li>
+		  <li><a href="http://prawn.wtf/prawninfo">More info</a></li>
+		  <li><a href="http://prawn.wtf/prawntickets">Buy tickets</a></li>
       </ol>
 	  <div id="song-div"> <audio controls id="song-audio" src="Flamingo.mp3" type="audio/mpeg">
 		  Your browser does not support the audio tag... :(
@@ -30,21 +30,14 @@
     </div>
   </div>
   
-  <div id="contents">
-	
-	<div id="text-contents-container">
-		<div id="text-contents">
-			<h1>Tickets</h1>
-			<p>Tickets are $5 for Club Members or $10 for non-members<sup>1</sup>. This money is used to help us pay for the pool, which is pretty pricy. We will also be accepting donations to the <link> Great Barrier Reef Foundation during the event.</p>
-
-			<p> To buy a ticket, either bring your money with you to the event or send the money to the paypal link below. Then, email <a target="_blank" href="mailto:carletonstrategyclub@gmail.com">us</a> or message us on <a target="_blank" href="https://www.facebook.com/CUSCGaming/">our facebook page</a> for a confirmation</p>
-			<a id="paypal link" target="_blank" href="https://paypal.me/cusc"> <img src="paypal.png" style="width: 30%"> </a>
-			<p style="font-size:0.7rem"> 1: Note that you can buy a CUSC Club membership for $5, giving you discount to all future events! </p>
-		</div>
-	</div>
+  <div id="contents"> 
+	<span id="happening">
+		<span id="shrimp" alt="Prawns"></span>
+	</span>
+    
     <div class="text" id="timer"></div>
     
-    <div class="text" id="beready">Be ready, Carleton.</div>
+    <p class="text" id="beready">Be ready, Carleton.</p>
   </div>
 </body>
 
@@ -72,13 +65,16 @@
 		if ((distance < 0) && (now < endTime)) {
 			clearInterval(x);
 			document.getElementById("timer").innerHTML = "PRAWN IS HAPPENING";
+			document.getElementById("happening").innerHTML = "<img src='happening.gif' alt='HAPPENING'>";
 			document.getElementById("beready").innerHTML = "";
 		} else if (now > endTime) {
 			clearInterval(x);
-			document.getElementById("timer").innerHTML = "PRAWN IS OVER... :(";
-			document.getElementById("beready").innerHTML = "";
+			document.getElementById("timer").innerHTML = "PRAWN IS OVER...";
+			document.getElementById("beready").innerHTML = "Thanks to everyone that joined!";
 		}
 	}
+	
+	
   </script>
 
 </html>
