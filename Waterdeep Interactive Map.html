@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <!-- saved from url=(0048)https://www.aidedd.org/atlas/index.php?map=W&l=1 -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Waterdeep Interactive&nbsp;Map</title>	
+<title>Deepwater Interactive&nbsp;Map</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta name="description" content="Waterdeep Interactive Map : Wonder how far is Neverwinter from Waterdeep? We have zoom, distance calculator, display of area/regions, marks selection, and more !">	<script src="./Waterdeep Interactive Map_files/jquery.min.js.download"></script>
-	<script src="./Waterdeep Interactive Map_files/jquery-ui.min.js.download"></script>
-	<script src="./Waterdeep Interactive Map_files/raphael.min.js.download"></script>
-	<script src="./Waterdeep Interactive Map_files/lang_1.js.download"></script>
-	<script src="./Waterdeep Interactive Map_files/fonctions.js.download"></script>
+	<meta name="description" content="Deepwater Interactive Map : check out all the buildings and their owners!">	<script src="./Waterdeep Interactive Map_files/jquery.min.js"></script>
+	<script src="./Waterdeep Interactive Map_files/jquery-ui.min.js"></script>
+	<script src="./Waterdeep Interactive Map_files/raphael.min.js"></script>
+	<script src="./Waterdeep Interactive Map_files/lang_1.js"></script>
+	<script src="./Waterdeep Interactive Map_files/fonctions.js"></script>
 	<link rel="canonical" href="https://www.aidedd.org/atlas/index.php?map=W&amp;l=1">
 	<link rel="icon" href="https://www.aidedd.org/themes/simple/images/favicon.ico" sizes="16x16">
 	<link rel="icon" href="https://www.aidedd.org/themes/simple/images/favicon-32x32.png" sizes="32x32">
 	<link rel="apple-touch-icon" href="https://www.aidedd.org/themes/simple/images/favicon-152x152.png" sizes="152x152">
 	<link rel="icon" href="https://www.aidedd.org/themes/simple/images/favicon-192x192.png" sizes="192x192">
 	<link rel="stylesheet" href="./Waterdeep Interactive Map_files/all.min.css">
-	<link rel="stylesheet" href="./Waterdeep Interactive Map_files/style.css" type="text/css"> 
-<script src="./Waterdeep Interactive Map_files/dataW.js.download"></script>	<script async="" src="./Waterdeep Interactive Map_files/js"></script>
+	<link rel="stylesheet" href="./Waterdeep Interactive Map_files/style.css" type="text/css">
+<script src="./Waterdeep Interactive Map_files/dataW.js"></script>	<script async="" src="./Waterdeep Interactive Map_files/js"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
@@ -38,7 +38,7 @@
 		var zoomLite=1.1, zoomStrong=1.25;
 		var arr = new Array();
 		var availableLieux = new Array();
-		var viewPoints=0, viewZones=1; 
+		var viewPoints=0, viewZones=1;
 		var Xclick=Yclick=clickToMove=0;
 		var drawing=distance=0;
 		var oldX=oldY=idT=0;
@@ -80,7 +80,7 @@
 	<div id="points" style="display:none"><input type="checkbox" id="ptv1" value="1" style="border-color:#58ACFA" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#58ACFA"> </div> City buildings<br><input type="checkbox" id="ptv2" value="1" style="border-color:#FF0000" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FF0000"> </div> Inns, Taverns, Festhalls<br><input type="checkbox" id="ptv3" value="1" style="border-color:#FFFF00" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FFFF00"> </div> Temples<br><input type="checkbox" id="ptv4" value="1" style="border-color:#2eb82e" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#2eb82e"> </div> Guildhalls<br><input type="checkbox" id="ptv5" value="1" style="border-color:#FF00FF" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FF00FF"> </div> Businesses<br><input type="checkbox" id="ptv6" value="1" style="border-color:#000066" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#000066"> </div> Warehouses<br><input type="checkbox" id="ptv7" value="1" style="border-color:#F4900A" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#F4900A"> </div> Noble villas<br><input type="checkbox" id="ptv8" value="1" style="border-color:#FFFFFF" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FFFFFF"> </div> Places &amp; Streets<br><input type="checkbox" id="ptv9" value="1" style="border-color:#AAAAAA" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#AAAAAA"> </div> Miscellaneous<br></div>
 
 	<script>
- 		var map = new Raphael("map", drawWidth, drawHeight);	
+ 		var map = new Raphael("map", drawWidth, drawHeight);
 		map.canvas.setAttribute('preserveAspectRatio', 'xMidYMin');
 
 		if (isMobile())
@@ -156,14 +156,14 @@
 					}
 					else
 					{
-						nameP = nameS = zones[arr[this.id]].name; 
+						nameP = nameS = zones[arr[this.id]].name;
 						txtP = txtS = zones[arr[this.id]].txt;
 					}
 
 					var descr = "<h2>"+nameP+"</h2>";
 					if (nameP != nameS) descr += "<h3>[ "+nameS+" ]</h3>";
 					if (txtP != "") descr += txtP; else descr += txtS;
-		
+
 					$('#txt').html(descr);
 					showDescr();
 				}
@@ -175,7 +175,7 @@
 			});
 
 		 	obj.mouseout (function() {
-				if (viewZones == 1) 
+				if (viewZones == 1)
 					this.attr({'stroke-width': 0})
 			});
 		}
@@ -215,7 +215,7 @@
 			else if (drawing == 2)
 			{
 				drawLine( parseInt((offsetX + xx)*ratio), parseInt((offsetY + yy)*ratio));
-			}	
+			}
 			else
 			{
 				Xclick=xx; Yclick=yy;
