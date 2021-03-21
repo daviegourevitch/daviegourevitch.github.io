@@ -65,17 +65,36 @@ var zones = [
 	},
 ];
 
-const RANGE = "A1:I398"
+const RANGE = "A2:I398"
 const SHEET_ID = "1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68";
 const API_KEY = "AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
 const SHEETS_URL = "https://sheets.googleapis.com/v4/spreadsheets/" + SHEET_ID + "/" + RANGE + "?" + "KEY"
 
 const URL = "https://sheets.googleapis.com/v4/spreadsheets/1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68/values/A1:I398?key=AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
 
+$.ajaxSetup({
+async: false
+});
+
+var groupe = [];
 $.getJSON(URL, function(data) {
-		console.log(data)
-		console.log(data.values)
-		var groupe = data.values
+	for(const i in data.values) {
+		var object = {
+			ref: data.values[i][0],
+			ward: data.values[i][1],
+			color: data.values[i][2],
+			x: data.values[i][3],
+			y: data.values[i][4],
+			name: data.values[i][5],
+			guild: data.values[i][6],
+			txt: data.values[i][7]
+		}
+		groupe.push(object)
+	}
+});
+
+$.ajaxSetup({
+async: true
 });
 
 
