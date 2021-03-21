@@ -86,7 +86,7 @@ $.getJSON(URL, function(data) {
 			x: data.values[i][3],
 			y: data.values[i][4],
 			name: data.values[i][5],
-			owner: data.values[i][6]
+			owner: data.values[i][6],
 			guild: data.values[i][7],
 			txt: data.values[i][8]
 		}
