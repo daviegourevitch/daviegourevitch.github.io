@@ -5,6 +5,14 @@ function isMobile() {
 		return (false);
 }
 
+function generateBuildingTxt(building) {
+	var txt = "";
+	txt += `<p><strong>Controlling Guild</strong>: ${building.guild}</p>`;
+	txt += `<p><strong>Owner</strong>: ${building.owner}</p>`;
+	txt += building.txt;
+	return txt;
+}
+
 function setPoints(mode) {
 
 	if ((viewPoints == 0) || ((viewPoints == 1) && (mode == 2)))
@@ -31,14 +39,22 @@ function setPoints(mode) {
 			if (bilang == 1)
 			{
 				if (lang == 1)
-				{	nameP = nameS = groupe[i].name1;                  txtP = txtS = groupe[i].txt1;}
+				{
+					nameP = nameS = groupe[i].name1;
+					txtP = txtS = generateBuildingTxt(groupe[i]);
+				}
 				else
-				{	nameP = groupe[i].name0; nameS = groupe[i].name1; txtP = groupe[i].txt0; txtS = groupe[i].txt1; }
+				{
+					nameP = groupe[i].name0;
+					nameS = groupe[i].name1;
+					txtP = generateBuildingTxt(groupe[i]);
+					txtS = generateBuildingTxt(groupe[i]);
+				}
 			}
 			else
 			{
 				nameP = nameS = groupe[i].name;
-				txtP = txtS = groupe[i].txt;
+				txtP = txtS = generateBuildingTxt(groupe[i]);
 			}
 
 			if (nameP == "GROUP")
@@ -115,14 +131,22 @@ function affichePoint(search) {
 		if (bilang == 1)
 		{
 			if (lang == 1)
-			{ nameP = nameS = groupe[i].name1;                  txtP = txtS = groupe[i].txt1;}
+			{
+				nameP = nameS = groupe[i].name1;
+				txtP = txtS = generateBuildingTxt(groupe[i]);
+			}
 			else
-			{ nameP = groupe[i].name0; nameS = groupe[i].name1; txtP = groupe[i].txt0; txtS = groupe[i].txt1; }
+			{
+				nameP = groupe[i].name0;
+				nameS = groupe[i].name1;
+				txtP = generateBuildingTxt(groupe[i]);
+				txtS = generateBuildingTxt(groupe[i]);
+			}
 		}
 		else
 		{
 			nameP = nameS = groupe[i].name;
-			txtP = txtS = groupe[i].txt;
+			txtP = txtS = generateBuildingTxt(groupe[i]);
 		}
 
 		if (nameP == search || nameS == search)
@@ -162,7 +186,7 @@ function guildToColour(guild) {
 	if (lowerCase == "western" || lowerCase == "western u" || lowerCase == "western university" || lowerCase == "westernreach" || lowerCase == "the riders of the westernreach") return "#ab3fdd";
 	if (lowerCase == "trent" || lowerCase == "trent u" || lowerCase == "trent university" || lowerCase == "trentarian" || lowerCase == "blades of the trentarian") return "#58bb43";
 	if (lowerCase == "toronto" || lowerCase == "toronto u" || lowerCase == "utm" || lowerCase == "travellers" || lowerCase == "united travellers monastery" ) return "#4a5c81";
-	if (lowerCase == "algonquin" || lowerCase == "algonquin college" || lowerCase == "northern corporation" || lowerCase == "northern corporation") return "#0cff00";
+	if (lowerCase == "algonquin" || lowerCase == "algonquin college" || lowerCase == "northern corporation" || lowerCase == "the northern corporation") return "#0cff00";
 	return "#000000";
 }
 
