@@ -6,6 +6,40 @@ var bilang = 0;
 var auteur ="<a href='https://www.inprnt.com/gallery/j_a_e/waterdeep/'>Jason Engle</a>";
 /* 310 px = 1000 ft = 304.8 m -> 1017.0 px = 1 km */
 
+const RANGE = "A2:I398"
+const SHEET_ID = "1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68";
+const API_KEY = "AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
+const SHEETS_URL = "https://sheets.googleapis.com/v4/spreadsheets/" + SHEET_ID + "/" + RANGE + "?" + "KEY"
+
+const URL = "https://sheets.googleapis.com/v4/spreadsheets/1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68/values/A1:I398?key=AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
+
+$.ajaxSetup({
+async: false
+});
+
+var groupe = [];
+$.getJSON(URL, function(data) {
+	for(const i in data.values) {
+		var object = {
+			ref: data.values[i][0] || "",
+			ward: data.values[i][1] || "",
+			color: data.values[i][2] || "",
+			x: data.values[i][3] || "",
+			y: data.values[i][4] || "",
+			name: data.values[i][5] || "",
+			owner: data.values[i][6] || "",
+			guild: data.values[i][7] || "",
+			txt: data.values[i][8] || ""
+		}
+		groupe.push(object)
+	}
+});
+
+$.ajaxSetup({
+async: true
+});
+
+
 var zones = [
 	{
 	 	name: "Field Ward",
@@ -64,40 +98,6 @@ var zones = [
 		path: "M 2982,3080 2902,3015 2823,2952 2712,2961 2598,3076 2556,3180 2540,3203 2528,3220 2457,3315 2419,3411 2421,3580 2409,3696 2376,3811 2476,3853 2562,3892 2609,3908 2672,3966 2755,4008 2847,4035 2850,3858 2888,3680 2914,3482 2919,3299 2990,3101 Z"
 	},
 ];
-
-const RANGE = "A2:I398"
-const SHEET_ID = "1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68";
-const API_KEY = "AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
-const SHEETS_URL = "https://sheets.googleapis.com/v4/spreadsheets/" + SHEET_ID + "/" + RANGE + "?" + "KEY"
-
-const URL = "https://sheets.googleapis.com/v4/spreadsheets/1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68/values/A1:I398?key=AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
-
-$.ajaxSetup({
-async: false
-});
-
-var groupe = [];
-$.getJSON(URL, function(data) {
-	for(const i in data.values) {
-		var object = {
-			ref: data.values[i][0] || "",
-			ward: data.values[i][1] || "",
-			color: data.values[i][2] || "",
-			x: data.values[i][3] || "",
-			y: data.values[i][4] || "",
-			name: data.values[i][5] || "",
-			owner: data.values[i][6] || "",
-			guild: data.values[i][7] || "",
-			txt: data.values[i][8] || ""
-		}
-		groupe.push(object)
-	}
-});
-
-$.ajaxSetup({
-async: true
-});
-
 
 var groupe_original = [
 { name:"GROUP", color:"#58ACFA", x:0, y:0, txt:"City buildings"},
