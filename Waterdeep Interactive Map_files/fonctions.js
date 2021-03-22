@@ -13,7 +13,7 @@ function setPoints(mode) {
 		$("[id^='circ']").remove();
 		var x=y=0;
 		var nbrGrp=into=0;
-		
+
 		var Ptv1 = $('#ptv1').prop('checked');
 		var Ptv2 = $('#ptv2').prop('checked');
 		var Ptv3 = $('#ptv3').prop('checked');
@@ -62,7 +62,9 @@ function setPoints(mode) {
 				{
 					y= groupe[i].y;
 
-					dot = map.circle(x,y).attr({fill: groupe[i].color, stroke: "black", "stroke-width": dotTrait, r: 0, cursor: "pointer"});
+					var guildColour = guildToColour(groupe[i].guild);
+					var strokeColour = groupe[i].color;
+					dot = map.circle(x,y).attr({fill: guildColour, stroke: strokeColour, "stroke-width": dotTrait, r: 0, cursor: "pointer"});
 					dot.stop().attr(200).animate({r:dotWidth}, 1000, "elastic");
 					dot.node.id = 'circ'+i;
 					var descr = "<h2>"+nameP+"</h2>";
@@ -138,16 +140,30 @@ function affichePoint(search) {
 	}
 	if (x != 0)
 	{
-		dot = map.circle(x,y).attr({fill: groupe[i].color, stroke: "black", "stroke-width": dotTrait, r: 0, cursor: "pointer"});
+		var guildColour = guildToColour(groupe[i].guild);
+		var strokeColour = groupe[i].color;
+		dot = map.circle(x,y).attr({fill: guildColour, stroke: strokeColour, "stroke-width": dotTrait, r: 0, cursor: "pointer"});
 		dot.stop().attr(200).animate({r:dotWidth}, 1000, "elastic");
 		dot.click(function(){$('#txt').html(descr); showDescr();});
 	}
-	/* centre sur le point cherché */		
+	/* centre sur le point cherché */
 	zoom=zoomPoint;
 	resize(0);
 	offsetX = (x/ratio - screenW/2);
 	offsetY = (y/ratio - screenH/2);
 	moveMap();
+}
+
+function guildToColour(guild) {
+	var lowerCase = guild.toLowerCase()
+	if (lowerCase == "no one" || lowerCase == "none") return "#000000";
+	if (lowerCase == "carleton" || lowerCase == "carleton u" || lowerCase == "carleton university" || lowerCase == "carlstown" || lowerCase == "carlstown blasting company") return "#ff0e00";
+	if (lowerCase == "laurier" || lowerCase == "laurier u" || lowerCase == "laurier university" || lowerCase == "laureates" || lowerCase == "the silverware laureates") return "#f8b800";
+	if (lowerCase == "western" || lowerCase == "western u" || lowerCase == "western university" || lowerCase == "westernreach" || lowerCase == "the riders of the westernreach") return "#ab3fdd";
+	if (lowerCase == "trent" || lowerCase == "trent u" || lowerCase == "trent university" || lowerCase == "trentarian" || lowerCase == "blades of the trentarian") return "#58bb43";
+	if (lowerCase == "toronto" || lowerCase == "toronto u" || lowerCase == "utm" || lowerCase == "travellers" || lowerCase == "united travellers monastery" ) return "#4a5c81";
+	if (lowerCase == "algonquin" || lowerCase == "algonquin college" || lowerCase == "northern corporation" || lowerCase == "northern corporation") return "#0cff00";
+	return "#000000";
 }
 
 function unshowDescr() {
@@ -212,7 +228,7 @@ $(document).keyup(function(e) {
 		showDescr();
 		drawing = distance = 0;
 	}
-});	
+});
 
 $(document).keydown(function(e) {
 
@@ -266,18 +282,18 @@ function setZoom(sens) {
 }
 
 function resize(z) {
-	if (z > 0) 
-		zoom = zoom * Math.abs(z);	
+	if (z > 0)
+		zoom = zoom * Math.abs(z);
 	else if (z < 0)
-		zoom = zoom / Math.abs(z);	
+		zoom = zoom / Math.abs(z);
 
-	if (zoom <= 1) 
+	if (zoom <= 1)
 		zoom = 1;
 
 	realWidth  = screenW * zoom;
  	realHeight = screenH * zoom;
 	ratio = Math.max(drawWidth/realWidth, drawHeight/realHeight);
-	tailleX=parseInt(drawWidth/ratio); 
+	tailleX=parseInt(drawWidth/ratio);
 	tailleY=parseInt(drawHeight/ratio);
 
 	map.setSize(realWidth, realHeight);
@@ -289,7 +305,7 @@ function resize(z) {
 }
 
 function moveMap() {
-	if (zoom == 1) 
+	if (zoom == 1)
 	{
 		offsetX = (tailleX - realWidth)/2;
 		offsetY = (tailleY - realHeight)/2;
@@ -312,11 +328,11 @@ function drawLine(x, y)
 	line = map.path("M"+oldX+","+oldY+" L"+x+","+y);
 	line.attr ("stroke", "#0000FF");
 	line.attr ("stroke-width", 8);
-	line.attr ("stroke-linecap", 'round');		
+	line.attr ("stroke-linecap", 'round');
 	line.node.id = 'line'+idT;
 	idT++;
 	distance = distance + Math.sqrt((x-oldX)*(x-oldX) + (y-oldY)*(y-oldY)) / factorKm;
-		
+
 	var texte = LgEndTra+LgDist;
 
 	if (carte == "L" || carte == "N" || carte == "W" || carte == "B")

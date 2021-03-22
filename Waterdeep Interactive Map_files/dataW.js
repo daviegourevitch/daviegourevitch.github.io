@@ -80,15 +80,15 @@ var groupe = [];
 $.getJSON(URL, function(data) {
 	for(const i in data.values) {
 		var object = {
-			ref: data.values[i][0],
-			ward: data.values[i][1],
-			color: data.values[i][2],
-			x: data.values[i][3],
-			y: data.values[i][4],
-			name: data.values[i][5],
-			owner: data.values[i][6],
-			guild: data.values[i][7],
-			txt: data.values[i][8]
+			ref: data.values[i][0] || "",
+			ward: data.values[i][1] || "",
+			color: data.values[i][2] || "",
+			x: data.values[i][3] || "",
+			y: data.values[i][4] || "",
+			name: data.values[i][5] || "",
+			owner: data.values[i][6] || "",
+			guild: data.values[i][7] || "",
+			txt: data.values[i][8] || ""
 		}
 		groupe.push(object)
 	}
