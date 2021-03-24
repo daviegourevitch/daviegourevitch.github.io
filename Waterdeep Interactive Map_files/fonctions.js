@@ -34,7 +34,6 @@ function setPoints(mode) {
 
 		for (var i=0; i<groupe.length; i++)
 		{
-			console.log(groupe.length)
 			into=0;
 
 			if (bilang == 1)
@@ -180,15 +179,14 @@ function affichePoint(search) {
 }
 
 function guildToColour(guild) {
-	var lowerCase = guild.toLowerCase()
-	if (lowerCase == "no one" || lowerCase == "none") return "#000000";
-	if (lowerCase == "carleton" || lowerCase == "carleton u" || lowerCase == "carleton university" || lowerCase == "carlstown" || lowerCase == "carlstown blasting company") return "#ff0e00";
-	if (lowerCase == "laurier" || lowerCase == "laurier u" || lowerCase == "laurier university" || lowerCase == "laureates" || lowerCase == "the silverware laureates") return "#f8b800";
-	if (lowerCase == "western" || lowerCase == "western u" || lowerCase == "western university" || lowerCase == "westernreach" || lowerCase == "the riders of the westernreach") return "#ab3fdd";
-	if (lowerCase == "trent" || lowerCase == "trent u" || lowerCase == "trent university" || lowerCase == "trentarian" || lowerCase == "blades of the trentarian") return "#58bb43";
-	if (lowerCase == "toronto" || lowerCase == "toronto u" || lowerCase == "utm" || lowerCase == "travellers" || lowerCase == "united travellers monastery" ) return "#4a5c81";
-	if (lowerCase == "algonquin" || lowerCase == "algonquin college" || lowerCase == "northern corporation" || lowerCase == "the northern corporation") return "#0cff00";
-	return "#000000";
+	if (guild == "None") return "#808080";
+	if (guild == "Carlstown Blasting Company (Carleton)") return "#ff0e00";
+	if (guild == "The Silverware Laureates (Laurier)") return "#f8b800";
+	if (guild == "The Riders of the Westernreach (Western)") return "#ab3fdd";
+	if (guild == "Blades of the Trentarian (Trent)") return "#58bb43";
+	if (guild == "United Travellers Monastery (UTM)") return "#4a5c81";
+	if (guild == "The Northern Corporation (Algonquin)") return "#0cff00";
+	return "#808080";
 }
 
 function unshowDescr() {
