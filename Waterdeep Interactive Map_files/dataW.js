@@ -6,12 +6,12 @@ var bilang = 0;
 var auteur ="<a href='https://www.inprnt.com/gallery/j_a_e/waterdeep/'>Jason Engle</a>";
 /* 310 px = 1000 ft = 304.8 m -> 1017.0 px = 1 km */
 
-const RANGE = "A2:I398"
+const RANGE = "A2:I640"
 const SHEET_ID = "1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68";
 const API_KEY = "AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
 const SHEETS_URL = "https://sheets.googleapis.com/v4/spreadsheets/" + SHEET_ID + "/" + RANGE + "?" + "KEY"
 
-const URL = "https://sheets.googleapis.com/v4/spreadsheets/1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68/values/A1:I398?key=AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
+const URL = "https://sheets.googleapis.com/v4/spreadsheets/1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68/values/" + RANGE + "?key=AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
 
 $.ajaxSetup({
 async: false

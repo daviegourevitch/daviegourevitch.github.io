@@ -9,7 +9,7 @@ function generateBuildingTxt(building) {
 	var txt = "";
 	txt += `<p><strong>Controlling Guild</strong>: ${building.guild}</p>`;
 	txt += `<p><strong>Owner</strong>: ${building.owner}</p>`;
-	txt += building.txt;
+	txt += `<p>${building.txt}</p>`;
 	return txt;
 }
 
@@ -34,6 +34,7 @@ function setPoints(mode) {
 
 		for (var i=0; i<groupe.length; i++)
 		{
+			console.log(groupe.length)
 			into=0;
 
 			if (bilang == 1)
