@@ -82,7 +82,7 @@ var wards = {
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
-	"Southern Ward": {
+	"South Ward": {
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
@@ -191,10 +191,10 @@ var zones = [
 	path: "M 2079,909.3 2048,909.7 1931,881.9 1754,811.6 1583,756 1404,693 1243,596.7 1131,491.2 1046,370.8 C 1046,370.8 972.2,374.5 964.8,374.5 957.4,374.5 933.3,385.6 933.3,385.6 L 813,465.3 693,603.9 642.3,794 585.9,974.3 531,1156 538,1428 538,1564 525.4,1656 505.6,1755 414.1,1719 394.4,1783 483.1,1818 459.2,2012 345.1,2146 338,2195 305.6,2252 314.1,2329 400,2359 426.8,2335 507,2325 726.8,2318 1196,2325 1303,2311 1777,2321 1776,1959 1780,1471 2076,1469 2068,985.6 Z"
 	},
 	{
-		name: "Southern Ward",
-		txt: `<p>Southern Ward lies in the southeastern corner of Waterdeep. Caravan City, as this ward is sometimes known, is a homely, friendly, busy, and largely poor area of Waterdeep. Stables, warehouses, and shops related to overland trade dominate this ward.</p><p><strong>Controlling Guild</strong>: ${owningGuildOf("Southern Ward")}</p><p><strong>Ward's colors</strong>: red and white</p><p><strong>Mascot</strong>: mule</p>`,
-		couleur: guildToColour(owningGuildOf("Southern Ward")),
-		owningGuild: owningGuildOf("Southern Ward"),
+		name: "South Ward",
+		txt: `<p>South Ward lies in the southeastern corner of Waterdeep. Caravan City, as this ward is sometimes known, is a homely, friendly, busy, and largely poor area of Waterdeep. Stables, warehouses, and shops related to overland trade dominate this ward.</p><p><strong>Controlling Guild</strong>: ${owningGuildOf("South Ward")}</p><p><strong>Ward's colors</strong>: red and white</p><p><strong>Mascot</strong>: mule</p>`,
+		couleur: guildToColour(owningGuildOf("South Ward")),
+		owningGuild: owningGuildOf("South Ward"),
 		bord: "",
 		path: "M 2477,4766 2555,4757 2662,4737 2654,4636 2715,4634 2748,4634 2787,4629 2819,4641 2881,4693 2906,4677 2926,4677 2973,4640 3001,4622 3019,4616 3035,4589 3027,4791 3007,4941 3047,5116 3073,5265 3155,5403 3149,5501 3117,5644 3120,5652 3149,5737 3101,5788 3100,5799 3117,5876 3117,5889 3044,5997 3000,5968 2929,5899 2857,5893 2792,5876 2624,5764 2609,5725 2587,5633 2579,5571 2576,5531 2563,5337 2537,5192 2519,5027 2489,4831 Z"
 	},
