@@ -67,7 +67,7 @@
 	<i id="zoomM" class="fas fa-minus icon bZoomM" title="Zoom" onclick="setZoom(-zoomStrong)"></i>
 	<i class="fas fa-map-marker-alt icon bPoints" title="Select Details" onclick="$(&#39;#points&#39;).toggle();"></i>
 	<button id="bZone" class="bZone bZoneV" title="Show/Hide Areas" onclick="toogleZones()" style="background-image: url(&quot;images/smallW.jpg&quot;);"></button>
-	<div id="points" style="display:none"><input type="checkbox" id="ptv1" value="1" style="border-color:#58ACFA" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#58ACFA"> </div> City buildings<br><input type="checkbox" id="ptv2" value="1" style="border-color:#FF0000" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FF0000"> </div> Inns, Taverns, Festhalls<br><input type="checkbox" id="ptv3" value="1" style="border-color:#FFFF00" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FFFF00"> </div> Temples<br><input type="checkbox" id="ptv4" value="1" style="border-color:#2eb82e" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#2eb82e"> </div> Guildhalls<br><input type="checkbox" id="ptv5" value="1" style="border-color:#FF00FF" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FF00FF"> </div> Businesses<br><input type="checkbox" id="ptv6" value="1" style="border-color:#000066" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#000066"> </div> Warehouses<br><input type="checkbox" id="ptv7" value="1" style="border-color:#F4900A" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#F4900A"> </div> Noble villas<br><input type="checkbox" id="ptv8" value="1" style="border-color:#FFFFFF" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#FFFFFF"> </div> Places &amp; Streets<br><input type="checkbox" id="ptv9" value="1" style="border-color:#AAAAAA" checked="checked" onchange="setPoints(2);"><div class="legend" style="background-color:#AAAAAA"> </div> Miscellaneous<br></div>
+	<div id="points" style="display:none"></div>
 
 	<script>
  		var map = new Raphael("map", drawWidth, drawHeight);
@@ -83,7 +83,7 @@
 			$('#map').css("background-image", "url('images/"+image+"')");
 
 		}
-		
+
 		$('#bZone').css("background-image", "url('images/"+mini+"')");
 
 		/* remplit combolist */
