@@ -80,7 +80,7 @@ function setPoints(mode) {
 					y= groupe[i].y;
 
 					var guildColour = guildToColour(groupe[i].guild);
-					var strokeColour = groupe[i].color;
+					var strokeColour = "#000000";
 					dot = map.circle(x,y).attr({fill: guildColour, stroke: strokeColour, "stroke-width": dotTrait, r: 0, cursor: "pointer"});
 					dot.stop().attr(200).animate({r:dotWidth}, 1000, "elastic");
 					dot.node.id = 'circ'+i;
@@ -166,7 +166,7 @@ function affichePoint(search) {
 	if (x != 0)
 	{
 		var guildColour = guildToColour(groupe[i].guild);
-		var strokeColour = groupe[i].color;
+		var strokeColour = "#000000";
 		dot = map.circle(x,y).attr({fill: guildColour, stroke: strokeColour, "stroke-width": dotTrait, r: 0, cursor: "pointer"});
 		dot.stop().attr(200).animate({r:dotWidth}, 1000, "elastic");
 		dot.click(function(){$('#txt').html(descr); showDescr();});
