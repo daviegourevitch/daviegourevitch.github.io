@@ -113,10 +113,17 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
+	}, "Outskirts": {
+		"Blades of the Trentarian (Trent)": 0,
+		"Carlstown Blasting Company (Carleton)": 0,
+		"The Silverware Laureates (Laurier)": 0,
+		"The Riders of the Westernreach (Western)": 0,
+		"United Travellers Monastery (UTM)": 0,
+		"The Northern Corporation (Algonquin)": 0
 	}
 }
 
-const validWardNames = ["North Ward", "Field Ward", "Castle Ward", "Dock Ward", "South Ward", "City of the Dead", "Trades Ward", "Sea Ward", "Deepwater Harbor"]
+const validWardNames = ["Outskirts", "North Ward", "Field Ward", "Castle Ward", "Dock Ward", "South Ward", "City of the Dead", "Trades Ward", "Sea Ward", "Deepwater Harbor"]
 
 for(const i in groupe) {
 	if (validWardNames.includes(groupe[i].ward) && groupe[i].guild != "None") {
