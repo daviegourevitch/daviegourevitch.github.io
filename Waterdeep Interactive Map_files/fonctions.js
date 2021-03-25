@@ -8,6 +8,7 @@ function isMobile() {
 function generateBuildingTxt(building) {
 	var txt = "";
 	txt += `<p><strong>Controlling Guild</strong>: ${building.guild}</p>`;
+	txt += `<p><strong>Ward</strong>: ${building.ward}</p>`;
 	txt += `<p><strong>Owner</strong>: ${building.owner}</p>`;
 	txt += `<p>${building.txt}</p>`;
 	return txt;

@@ -129,7 +129,7 @@ function guildToName(guild) {
 
 function owningGuildOf(ward) {
 	var curLargest = 0;
-	var curUni = "none";
+	var curUni = "None";
 	for(const uni in wards[ward]) {
 		if(wards[ward][uni] > curLargest) {
 			curUni = uni;
