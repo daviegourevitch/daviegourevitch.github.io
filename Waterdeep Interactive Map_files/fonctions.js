@@ -214,6 +214,7 @@ function setSearch(force) {
 	$("#search").addClass('txtgris')
 	$('#search-icon').show();
 	$('#del-icon').hide();
+	setPoints(0);
 	unshowDescr();
 }
 
