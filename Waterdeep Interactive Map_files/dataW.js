@@ -43,75 +43,84 @@ async: true
 
 var wards = {
 	"Field Ward": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
-		"Blades of the Trentarian (Trent)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Castle Ward": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
-		"Blades of the Trentarian (Trent)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Dock Ward": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
-		"Blades of the Trentarian (Trent)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"North Ward": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
-		"Blades of the Trentarian (Trent)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Sea Ward": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
-		"Blades of the Trentarian (Trent)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"South Ward": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
-		"Blades of the Trentarian (Trent)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Trades Ward": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
-		"Blades of the Trentarian (Trent)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"City of the Dead": {
+		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
+		"United Travellers Monastery (UTM)": 0,
+		"The Northern Corporation (Algonquin)": 0
+	},
+	"Deepwater Harbor": {
 		"Blades of the Trentarian (Trent)": 0,
+		"Carlstown Blasting Company (Carleton)": 0,
+		"The Silverware Laureates (Laurier)": 0,
+		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	}
 }
 
+const validWardNames = ["North Ward", "Field Ward", "Castle Ward", "Dock Ward", "South Ward", "City of the Dead", "Trades Ward", "Sea Ward", "Deepwater Harbor"]
+
 for(const i in groupe) {
-	if (groupe[i].ward && groupe[i].ward.toLowerCase() != "unknown" && groupe[i].guild && groupe[i].guild != "None" && wards[groupe[i].ward] && wards[groupe[i].ward][groupe[i].guild] >= 0) {
-		wards[groupe[i].ward][groupe[i].guild]++;
-		console.log("++")
+	if (validWardNames.includes(groupe[i].ward) && groupe[i].guild != "None") {
+		wards[groupe[i].ward][groupe[i].guild] += 1;
 	}
 }
 
@@ -133,6 +142,7 @@ function owningGuildOf(ward) {
 	for(const uni in wards[ward]) {
 		if(wards[ward][uni] > curLargest) {
 			curUni = uni;
+			curLargest = wards[ward][curUni]
 		}
 	}
 	return curUni;
