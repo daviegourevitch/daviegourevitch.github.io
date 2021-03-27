@@ -180,14 +180,14 @@ function affichePoint(search) {
 }
 
 function guildToColour(guild) {
-	if (guild == "None") return "#808080";
+	if (guild == "None") return "#FFFFFF";
 	if (guild == "Carlstown Blasting Company (Carleton)") return "#ff0e00";
 	if (guild == "The Silverware Laureates (Laurier)") return "#f8b800";
 	if (guild == "The Riders of the Westernreach (Western)") return "#ab3fdd";
 	if (guild == "Blades of the Trentarian (Trent)") return "#58bb43";
 	if (guild == "United Travellers Monastery (UTM)") return "#4a5c81";
 	if (guild == "The Northern Corporation (Algonquin)") return "#0cff00";
-	return "#808080";
+	return "#FFFFFF";
 }
 
 function unshowDescr() {
