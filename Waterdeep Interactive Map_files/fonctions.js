@@ -187,6 +187,7 @@ function guildToColour(guild) {
 	if (guild == "Blades of the Trentarian (Trent)") return "#58bb43";
 	if (guild == "United Travellers Monastery (UTM)") return "#4a5c81";
 	if (guild == "The Northern Corporation (Algonquin)") return "#0cff00";
+	if (guild == "New Guildtown (Brock)") return "#54446c";
 	return "#FFFFFF";
 }
 
