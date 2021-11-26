@@ -48,6 +48,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Castle Ward": {
@@ -56,6 +57,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Dock Ward": {
@@ -64,6 +66,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"North Ward": {
@@ -72,6 +75,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Sea Ward": {
@@ -80,6 +84,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"South Ward": {
@@ -88,6 +93,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Trades Ward": {
@@ -96,6 +102,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"City of the Dead": {
@@ -104,6 +111,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	},
 	"Deepwater Harbor": {
@@ -112,6 +120,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	}, "Outskirts": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -119,6 +128,7 @@ var wards = {
 		"The Silverware Laureates (Laurier)": 0,
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
+		"New Guildtown (Brock)": 0,
 		"The Northern Corporation (Algonquin)": 0
 	}
 }
@@ -140,6 +150,7 @@ function guildToName(guild) {
 	if (lowerCase == "trent" || lowerCase == "trent u" || lowerCase == "trent university" || lowerCase == "trentarian" || lowerCase == "blades of the trentarian") return "Blades of the Trentarian (Trent)";
 	if (lowerCase == "toronto" || lowerCase == "toronto u" || lowerCase == "utm" || lowerCase == "travellers" || lowerCase == "united travellers monastery" ) return "United Travellers Monastery (UTM)";
 	if (lowerCase == "algonquin" || lowerCase == "algonquin college" || lowerCase == "northern corporation" || lowerCase == "the northern corporation") return "The Northern Corporation (Algonquin)";
+	if (lowerCase == "brock" || lowerCase == "brock u" || lowerCase == "brock university" || lowerCase == "guildtown" || lowerCase == "new guildtown") return "New Guildtown (Brock)";
 	return "None";
 }
 
@@ -163,6 +174,7 @@ function guildToColour(guild) {
 	if (guild == "Blades of the Trentarian (Trent)") return "#58bb43";
 	if (guild == "United Travellers Monastery (UTM)") return "#225edc";
 	if (guild == "The Northern Corporation (Algonquin)") return "#0cff00";
+	if (guild == "New Guildtown (Brock)") return "#54446c";
 	return "#424242";
 }
 
