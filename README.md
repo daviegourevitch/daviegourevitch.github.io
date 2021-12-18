@@ -1,2 +1,0 @@
-# daviegourevitch.github.io
-Prawn
